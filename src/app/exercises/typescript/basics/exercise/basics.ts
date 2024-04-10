@@ -1,15 +1,15 @@
-// @ts-nocheck
-const foo: any = 'foo'
-const bar: any = 1
-const baz: any = true
-const qux: any[] = ['bar', 'baz', 'qux']
+// tslint:disable
+const foo: string = 'foo'
+const bar: number = 1
+const baz: boolean = true
+const qux: string[] = ['bar', 'baz', 'qux']
 
-const n: any = null
+const n: null = null
 
-let a: any
+let a: null
 a = null
 
-const b: any = Math.random() > 0.5 ? null : 'bar'
+const b: null | string = Math.random() > 0.5 ? null : 'bar'
 // OK: b = null
 
 if (b !== null) {
@@ -17,18 +17,18 @@ if (b !== null) {
   console.log(l)
 }
 
-function sum(a: any, b: any = 1): any {
+function sum(a: number, b: number = 1): number {
   return a + b
 }
 
 const result = sum(2).toFixed(4)
 console.log(result)
 
-const subtract = (a: any, b: any = 1): any => a + b
+const subtract = (a: number, b: number = 1): number => a + b
 const result2 = subtract(3)
 console.log(result2)
 
-function concatenate(a: any, b: any): any {
+function concatenate(a: string, b: string): string {
   if (b !== null) {
     return a.concat(b)
   }
@@ -40,6 +40,8 @@ const x = concatenate('Hello', null)
 const y = concatenate('Hello ', 'world')
 
 // Objects
+
+type
 const people: any[] = [
   { age: 42, name: 'Sonia', job: 'Autentia', pet: undefined },
   { age: 32, name: 'Paul', pet: 'lizard' },
